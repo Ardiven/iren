@@ -88,36 +88,229 @@
                 <h2 class="text-3xl font-bold text-gray-900">Dipilih oleh Jamu Iboe</h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="rounded-xl overflow-hidden py-4 px-6">
-                    <div class="shadow-[-2px_5px_6px_-1px_rgba(0,0,0,0.1),10px_10px_15px_-3px_rgba(0,0,0,0.4)] p-4 ">
-                        <img src="product/jahe.png" alt="Rosella Jamu Iboe" class="max-h-[244px] object-cover rounded-lg mb-4">
+            <div id="product-list" class="flex overflow-x-auto gap-8 pb-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            </div>
+
+            <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm items-center justify-center p-4 sm:p-6 transition-all duration-300 opacity-0">
+                <div class="bg-white rounded-2xl max-w-4xl w-full flex flex-col md:flex-row overflow-hidden relative shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+                    
+                    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition duration-200 z-10">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+
+                    <div class="md:w-[45%] p-8 flex items-center justify-center bg-white">
+                        <div class="shadow-[-2px_5px_6px_-1px_rgba(0,0,0,0.1),10px_10px_15px_-3px_rgba(0,0,0,0.4)] p-4 bg-white rounded-lg w-full max-w-[280px]">
+                            <img id="modal-img" src="" alt="Product Image" class="w-full object-contain">
+                        </div>
                     </div>
-                    <h3 class="font-bold text-lg pt-4">Jahe | Jamu Iboe Natural Drink</h3>
-                    <p class=" font-semibold text-xl">Rp 13.000</p>
-                </div>
-                <div class="rounded-xl overflow-hidden py-4 px-6">
-                    <div class="shadow-[-2px_5px_6px_-1px_rgba(0,0,0,0.1),10px_10px_15px_-3px_rgba(0,0,0,0.4)] p-4 ">
-                        <img src="product/manggis.png" alt="Rosella Jamu Iboe" class="max-h-[244px] object-cover rounded-lg mb-4">
+
+                    <div class="md:w-[55%] p-8 md:py-12 md:pr-12 flex flex-col justify-center">
+                        <h2 id="modal-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">Nama Produk</h2>
+                        <p id="modal-price" class="text-3xl font-bold text-gray-900 mb-4">Rp 0</p>
+                        
+                        <p id="modal-desc" class="text-gray-800 text-lg mb-3">Deskripsi singkat produk.</p>
+                        
+                        <p class="text-sm text-gray-600 mb-6">Beli 5 untuk dapat 1 stiker loyalty program lebih hemat 20%</p>
+                        
+                        <div class="flex items-center gap-4 mb-8">
+                            <select class="border border-gray-300 rounded text-gray-700 px-4 py-2 focus:outline-none focus:border-green-600 bg-white h-11 w-20 cursor-pointer">
+                                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                            </select>
+                            <button class="bg-[#EBECE7] text-gray-800 font-semibold h-11 px-8 rounded hover:bg-[#d8d9d4] transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="mb-5">
+                            <h4 class="font-bold text-gray-900 mb-2">Manfaati:</h4>
+                            <ul id="modal-benefits" class="list-disc pl-5 text-gray-800 text-sm space-y-1">
+                                </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Penyajian:</h4>
+                            <p id="modal-serving" class="text-gray-800 text-sm leading-relaxed">Cara penyajian produk.</p>
+                        </div>
                     </div>
-                    <h3 class="font-bold text-lg pt-4">Kulit Manggis | Jamu Iboe Natural Drink</h3>
-                    <p class=" font-semibold text-xl">Rp 13.000</p>
-                </div>
-                <div class="rounded-xl overflow-hidden py-4 px-6">
-                    <div class="shadow-[-2px_5px_6px_-1px_rgba(0,0,0,0.1),10px_10px_15px_-3px_rgba(0,0,0,0.4)] p-4 ">
-                        <img src="product/kencur.png" alt="Rosella Jamu Iboe" class="max-h-[244px] object-cover rounded-lg mb-4">
-                    </div>
-                    <h3 class="font-bold text-lg pt-4">Beras Kencur | Jamu Iboe Natural Drink</h3>
-                    <p class=" font-semibold text-xl">Rp 13.000</p>
-                </div>
-                <div class="rounded-xl overflow-hidden py-4 px-6">
-                    <div class="shadow-[-2px_5px_6px_-1px_rgba(0,0,0,0.1),10px_10px_15px_-3px_rgba(0,0,0,0.4)] p-4 ">
-                        <img src="product/rosella.png" alt="Rosella Jamu Iboe" class="max-h-[244px] object-cover rounded-lg mb-4">
-                    </div>
-                    <h3 class="font-bold text-lg pt-4">Rosella | Jamu Iboe Natural Drink</h3>
-                    <p class=" font-semibold text-xl">Rp 13.000</p>
                 </div>
             </div>
+            <script>
+                // 1. Data Objek Produk
+                const products = [
+                    {
+                        id: 1,
+                        name: "Beras Kencur | Jamu Iboe Natural Drink",
+                        price: "Rp 13.000",
+                        image: "product/kencur.png",
+                        desc: "Membantu meredakan pegal-pegal dan nyeri sendi serta gejala masuk angin.",
+                        benefits: [
+                            "Membantu meningkatkan stamina dan energi tubuh.",
+                            "Mengurangi rasa lelah dan pegal-pegal setelah beraktivitas.",
+                            "Membantu menjaga sistem pencernaan tetap sehat."
+                        ],
+                        serving: "Seduh sebungkus IBOE Natural Drink Beras Kencur dengan air matang 150 ml, aduk hingga larut. Lebih nikmat diminum dalam keadaan dingin."
+                    },
+                    {
+                        id: 2,
+                        name: "Kulit Manggis | Jamu Iboe Natural Drink",
+                        price: "Rp 13.000",
+                        image: "product/manggis.png",
+                        desc: "Kaya akan antioksidan untuk memelihara kesehatan kulit dan tubuh.",
+                        benefits: [
+                            "Menangkal radikal bebas dalam tubuh.",
+                            "Membantu mencerahkan dan menyehatkan kulit.",
+                            "Meningkatkan daya tahan tubuh secara alami."
+                        ],
+                        serving: "Seduh sebungkus IBOE Natural Drink Kulit Manggis dengan air matang 150 ml, aduk hingga larut. Bisa disajikan hangat atau dingin."
+                    },
+                    {
+                        id: 3,
+                        name: "Rosella | Jamu Iboe Natural Drink",
+                        price: "Rp 13.000",
+                        image: "product/rosella.png",
+                        desc: "Secara tradisional digunakan untuk membantu meringankan gejala tekanan darah tinggi yang ringan.",
+                        benefits: [
+                            "Membantu menjaga tekanan darah tetap stabil.",
+                            "Menyegarkan tubuh dengan rasa asam yang khas.",
+                            "Kaya akan Vitamin C untuk imunitas."
+                        ],
+                        serving: "Seduh sebungkus IBOE Natural Drink Rosella dengan air matang 150 ml, aduk hingga larut. Lebih nikmat disajikan dingin."
+                    },
+                    {
+                        id: 4,
+                        name: "Jahe | Jamu Iboe Natural Drink",
+                        price: "Rp 13.000",
+                        image: "product/jahe.png",
+                        desc: "Memberikan kehangatan dari dalam dan meredakan tenggorokan.",
+                        benefits: [
+                            "Meredakan mual dan melegakan tenggorokan.",
+                            "Menghangatkan tubuh di cuaca dingin.",
+                            "Membantu melancarkan sirkulasi darah."
+                        ],
+                        serving: "Seduh sebungkus IBOE Natural Drink Jahe dengan air matang 150 ml (disarankan air panas/hangat), aduk hingga larut."
+                    },
+                     {
+                        id: 5,
+                        name: "Beras Kencur | Jamu Iboe Natural Drink",
+                        price: "Rp 13.000",
+                        image: "product/kencur.png",
+                        desc: "Membantu meredakan pegal-pegal dan nyeri sendi serta gejala masuk angin.",
+                        benefits: [
+                            "Membantu meningkatkan stamina dan energi tubuh.",
+                            "Mengurangi rasa lelah dan pegal-pegal setelah beraktivitas.",
+                            "Membantu menjaga sistem pencernaan tetap sehat."
+                        ],
+                        serving: "Seduh sebungkus IBOE Natural Drink Beras Kencur dengan air matang 150 ml, aduk hingga larut. Lebih nikmat diminum dalam keadaan dingin."
+                    },
+                    {
+                        id: 6,
+                        name: "Kulit Manggis | Jamu Iboe Natural Drink",
+                        price: "Rp 13.000",
+                        image: "product/manggis.png",
+                        desc: "Kaya akan antioksidan untuk memelihara kesehatan kulit dan tubuh.",
+                        benefits: [
+                            "Menangkal radikal bebas dalam tubuh.",
+                            "Membantu mencerahkan dan menyehatkan kulit.",
+                            "Meningkatkan daya tahan tubuh secara alami."
+                        ],
+                        serving: "Seduh sebungkus IBOE Natural Drink Kulit Manggis dengan air matang 150 ml, aduk hingga larut. Bisa disajikan hangat atau dingin."
+                    },
+                    {
+                        id: 7,
+                        name: "Rosella | Jamu Iboe Natural Drink",
+                        price: "Rp 13.000",
+                        image: "product/rosella.png",
+                        desc: "Secara tradisional digunakan untuk membantu meringankan gejala tekanan darah tinggi yang ringan.",
+                        benefits: [
+                            "Membantu menjaga tekanan darah tetap stabil.",
+                            "Menyegarkan tubuh dengan rasa asam yang khas.",
+                            "Kaya akan Vitamin C untuk imunitas."
+                        ],
+                        serving: "Seduh sebungkus IBOE Natural Drink Rosella dengan air matang 150 ml, aduk hingga larut. Lebih nikmat disajikan dingin."
+                    },
+                    {
+                        id: 8,
+                        name: "Jahe | Jamu Iboe Natural Drink",
+                        price: "Rp 13.000",
+                        image: "product/jahe.png",
+                        desc: "Memberikan kehangatan dari dalam dan meredakan tenggorokan.",
+                        benefits: [
+                            "Meredakan mual dan melegakan tenggorokan.",
+                            "Menghangatkan tubuh di cuaca dingin.",
+                            "Membantu melancarkan sirkulasi darah."
+                        ],
+                        serving: "Seduh sebungkus IBOE Natural Drink Jahe dengan air matang 150 ml (disarankan air panas/hangat), aduk hingga larut."
+                    }
+                ];
+
+                // 2. Render Kartu Produk ke dalam HTML
+                const productList = document.getElementById('product-list');
+
+                products.forEach(product => {
+                    // Template literal untuk membuat elemen HTML
+                    const cardHTML = `
+                        <a href="javascript:void(0)" onclick="openModal(${product.id})" class="shrink-0 w-[85%] sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] snap-center rounded-xl overflow-hidden py-4 px-2 md:px-6 cursor-pointer">
+                            <div class="shadow-[-2px_5px_6px_-1px_rgba(0,0,0,0.1),10px_10px_15px_-3px_rgba(0,0,0,0.4)] p-4 bg-white rounded-lg">
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-48 lg:h-[244px] object-contain rounded-lg mb-4">
+                            </div>
+                            <h3 class="font-bold text-lg pt-4">${product.name}</h3>
+                            <p class="font-semibold text-xl text-green-700">${product.price}</p>
+                        </a>
+                    `;
+                    // Masukkan HTML ke dalam wadah
+                    productList.innerHTML += cardHTML;
+                });
+
+                // 3. Logika Modal
+                const modal = document.getElementById('product-modal');
+                const modalContent = document.getElementById('modal-content');
+
+                function openModal(productId) {
+                    // Cari produk berdasarkan ID yang diklik
+                    const selectedProduct = products.find(p => p.id === productId);
+
+                    // Ubah isi konten Modal sesuai data produk yang diklik
+                    document.getElementById('modal-img').src = selectedProduct.image;
+                    document.getElementById('modal-img').alt = selectedProduct.name;
+                    document.getElementById('modal-title').innerText = selectedProduct.name;
+                    document.getElementById('modal-price').innerText = selectedProduct.price;
+                    document.getElementById('modal-desc').innerText = selectedProduct.desc;
+                    document.getElementById('modal-serving').innerText = selectedProduct.serving;
+
+                    // Ubah isi list Manfaat
+                    const benefitsContainer = document.getElementById('modal-benefits');
+                    benefitsContainer.innerHTML = ''; // Bersihkan list lama
+                    selectedProduct.benefits.forEach(benefit => {
+                        benefitsContainer.innerHTML += `<li>${benefit}</li>`;
+                    });
+
+                    // Tampilkan Modal dengan animasi
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        modalContent.classList.remove('scale-95');
+                    }, 10);
+                }
+
+                function closeModal() {
+                    modal.classList.add('opacity-0');
+                    modalContent.classList.add('scale-95');
+                    setTimeout(() => {
+                        modal.classList.remove('flex');
+                        modal.classList.add('hidden');
+                    }, 300);
+                }
+
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            </script>
+
             <div id="slider-container" class="flex overflow-x-auto gap-4 pb-4 w-full hide-scrollbar snap-x touch-pan-x">
                 <div class="p-4 shrink-0 snap-center">
                     <img src="product/natural.png" alt="Produk 1" class="w-full object-cover rounded-lg mb-4">
